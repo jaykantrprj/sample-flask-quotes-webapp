@@ -45,7 +45,7 @@ The application provides the following routes for managing quotes:
 - /random - Retrieves a random motivational quote from an external API.
 - /insert - Inserts a new quote into the database.
 - /update - Updates an existing quote in the database.
-- /delete/id/ - Deletes a quote from the database by ID.
+- /delete/{id}/ - Deletes a quote from the database by ID.
 
 To interact with the application, you can use tools like Postman or cURL to send HTTP requests to the respective routes.
 
