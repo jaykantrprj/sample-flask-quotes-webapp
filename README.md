@@ -35,7 +35,7 @@ To get started with the application, follow these steps:
 5. **Run Application:**
     ```bash
     flask run
-6. Access the Application
+6. **Access the Application**
     The Flask application will be running on http://localhost:5000. Open this URL in your web browser to access the application.
 
 ## Usage

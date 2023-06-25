@@ -2,13 +2,17 @@ import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'Secret key'
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:changeme@localhost:5432/quotes"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
 
 
 class QuotesFlaskCurd(db.Model):
@@ -79,4 +83,4 @@ def delete(id):
     return jsonify({'message': 'Data deleted successfully'})
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run()
