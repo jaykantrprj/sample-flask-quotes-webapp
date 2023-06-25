@@ -28,10 +28,15 @@ To get started with the application, follow these steps:
 
 4. **Setup database**
     - Create a PostgreSQL database for the application.
-    - Update the database connection URI in app.py to match your PostgreSQL configuration. 
-    The URI should be of the format: 
+    - Update the database connection URI in .env file to match your PostgreSQL configuration. The URI should be of the format: 
+    `postgresql://username:password@hostname:port/database_name`
+    - Example `.env` content:
     ```bash
-    postgresql://username:password@hostname:port/database_name
+    FLASK_APP=app
+    FLASK_DEBUG=False
+    DATABASE_URL=postgresql://username:password@hostname:port/quotes_flask_curd
+    ```
+    
 5. **Run Application:**
     ```bash
     flask run
