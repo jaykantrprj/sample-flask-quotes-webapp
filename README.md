@@ -50,10 +50,10 @@ To get started with the application, follow these steps:
 The application provides the following routes for managing quotes:
 
 - / - Retrieves all quotes from the database.
-- /random - Retrieves a random motivational quote from an external API.
-- /insert - Inserts a new quote into the database.
-- /update - Updates an existing quote in the database.
-- /delete/{id}/ - Deletes a quote from the database by ID.
+- /random - Retrieves a random motivational quote from an external API. [Postman](https://github.com/jaykantrprj/sample-flask-quotes-webapp/blob/plusui/static/api-calls/random.png)
+- /insert - Inserts a new quote into the database. [Postman](https://github.com/jaykantrprj/sample-flask-quotes-webapp/blob/plusui/static/api-calls/insert.png)
+- /update - Updates an existing quote in the database. [Postman](https://github.com/jaykantrprj/sample-flask-quotes-webapp/blob/plusui/static/api-calls/update.png)
+- /delete/{id}/ - Deletes a quote from the database by ID. [Postman](https://github.com/jaykantrprj/sample-flask-quotes-webapp/blob/plusui/static/api-calls/delete.png)
 
 To interact with the application, you can use tools like Postman or cURL to send HTTP requests to the respective routes.
 
