@@ -10,6 +10,8 @@ Before running the application, make sure you have the following installed:
 - pip package manager
 - PostgreSQL (with a running database server)
 
+| NOTE: Postgres installation on docker-compsoe reference: `https://github.com/khezen/compose-postgres/blob/master/docker-compose.yml`
+
 ## Getting Started
 
 To get started with the application, follow these steps:
