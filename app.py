@@ -32,7 +32,8 @@ with app.app_context():
 @app.route('/')
 def index():
     get_data = QuotesFlaskCurd.query.all()
-    return jsonify({'message': f'{get_data}'})
+    quotes = [{'quote': quote.quote, 'author': quote.author} for quote in get_data]
+    return jsonify({'quotes': quotes})
 
 
 @app.route('/random')
