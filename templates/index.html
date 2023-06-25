@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="align-self: center; background-color: darkgoldenrod;">
+    <label for="quote" style="align-self: center;"> Quote Of the Day!  </label>
+    <div class="quote" style="align-self: center; border: tomato; font-size: 24px;">
+        {{ qod}}
+    </div>
+</div>
+
+<div class="container">
+    <h1>Your quotes!</h1>
+
+    
+    <div class="quotes">
+        {% for quote in quotes %}
+            <div class="quote">
+                {{ quote['quote'] +"    ~"+ quote['author']}}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
