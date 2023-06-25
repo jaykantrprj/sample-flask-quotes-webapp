@@ -1,4 +1,4 @@
-# Flask CRUD Application
+# Flask CRUD API
 
 This is a simple Flask application that demonstrates CRUD (Create, Read, Update, Delete) operations using a PostgreSQL database. The application allows you to manage quotes by inserting, updating, deleting, and retrieving quotes.
 
