@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from dotenv import load_dotenv
@@ -28,9 +28,29 @@ class QuotesFlaskCurd(db.Model):
 with app.app_context():
     db.create_all()
 
-
 @app.route('/')
 def index():
+    # quotes = ["Quote 1", "Quote 2", "Quote 3"]
+    get_data = QuotesFlaskCurd.query.all()
+    qod="NULL"
+    quotes = [{'quote': quote.quote, 'author': quote.author} for quote in get_data]
+
+    url = "https://zenquotes.io/api/random"
+    response = requests.get(url)
+    data = response.json()
+    
+    quote = data[0]['q']
+    author = data[0]['a']
+    qod_reponse= jsonify(f"{quote} - {author}")
+    return render_template('index.html', quotes=quotes, qod=f"{quote}   ~{author}")
+
+
+@app.route('/guide')
+def guide():
+    return render_template('api-guide.html')
+
+@app.route('/myquotes')
+def myquotes():
     get_data = QuotesFlaskCurd.query.all()
     quotes = [{'quote': quote.quote, 'author': quote.author} for quote in get_data]
     return jsonify({'quotes': quotes})
